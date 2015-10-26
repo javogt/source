@@ -2,22 +2,32 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
-		postcss: {
+		concat: {
+			dist: {
+				src: 'css/*.css',
+				dest: 'concat.css',
+			},
+		},
 
+		postcss: {
 			options: {
 				processors: [
+					require('postcss-calc')(),
+					require('postcss-custom-properties')(),
 					require('autoprefixer')()
 				]
 			},
 			dist: {
-				src: 'css/style.css',
+				src: 'concat.css',
 				dest: 'main.css'
 			}
-
 		}
 
 	});
 
 	grunt.loadNpmTasks('grunt-postcss');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+
+	grunt.registerTask('css', ['concat', 'postcss']);
 
 };

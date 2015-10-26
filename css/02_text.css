@@ -1,0 +1,6 @@
+html{
+	font-family: 'Segeo UI', 'Roboto', sans-serif;
+	font-weight: regular;
+	font-size: var(--baseUnit);
+	line-height: calc(var(--baseUnit) * 1.5);
+}

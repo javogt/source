@@ -1,3 +1,9 @@
+:root{
+	--baseUnit: 14px;
+	--primaryColor: #03a9f4;
+};
+
+
 body,
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
@@ -11,11 +17,11 @@ hr {
 }
 
 .app-bar{
-	background-color:  #03a9f4;
+	background-color: var(--primaryColor);
 }
 html{
 	font-family: 'Segeo UI', 'Roboto', sans-serif;
 	font-weight: regular;
-	font-size:  14px;
-	line-height:  calc(14px * 1.5);
+	font-size: var(--baseUnit);
+	line-height: calc(var(--baseUnit) * 1.5);
 }
